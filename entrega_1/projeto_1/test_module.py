@@ -13,7 +13,7 @@ class UnitTests(unittest.TestCase):
         self.assertAlmostEqual(actual, expected, "Sáida saiu diferente do esperado ao chamar 'calculate()' com '[9,1,5,3,3,3,2,9,0]'")
     
     def test_calculate_with_few_digits(self):
-        self.assertRaisesRegex(ValueError, "Lista deve conter nove números.", mean_var_std.calculate, [2,6,2,8,4,0,1,])
+        self.assertRaisesRegex(ValueError, "A lista deve conter nove números.", mean_var_std.calculate, [2,6,2,8,4,0,1,])
 
 if __name__ == "__main__":
     unittest.main()
