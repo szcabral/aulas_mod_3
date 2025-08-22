@@ -35,6 +35,7 @@ def calculate_demographic_data(print_data=True):
     rich_percentage = round((num_min_workers[num_min_workers["salary"] == ">50K"].shape[0] / num_min_workers.shape[0]) * 100, 1)
 
     # What country has the highest percentage of people that earn >50K?
+    country_salary = df.groupby("native-country")["salary"].apply(lambda x:(x == ">50K").sum() / len(x)* 100)
     highest_earning_country = country_salary.idmax()
     highest_earning_country_percentage = round(country_salary.max(), 1)
 
